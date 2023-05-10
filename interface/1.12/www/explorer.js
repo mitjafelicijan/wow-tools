@@ -1,6 +1,10 @@
 const assetUrl = 'https://raw.githubusercontent.com/mitjafelicijan/wow-tools/master/interface/1.12/assets';
 const assetDirectory = [];
 
+function generateNamespaceFrindlyName(assetName) {
+    return assetName.replace(/\//g, '\\');
+}
+
 // async self executing function
 (async () => {
     const response = await fetch(`${assetUrl}/listfile.txt?token=AABCIPALAGOZX5R`);
@@ -49,6 +53,9 @@ const assetDirectory = [];
                 assetElement.appendChild(image);
 
                 // Asset name
+                const assetProperName = `${namespaceName}\\${asset.asset}`.replace(/\\/g, '\\\\');
+                console.log(assetProperName);
+
                 const assetName = document.createElement('p');
                 assetName.innerHTML = `${namespaceName}\\${asset.asset}`.replace(/\\/g, '\\\\');
                 assetElement.appendChild(assetName);
@@ -82,8 +89,9 @@ const assetDirectory = [];
                 assetElement.appendChild(image);
 
                 // Asset name
+                const assetProperName = `${asset.namespace}\\${asset.asset}`.replace(/\\/g, '\\\\').replace(/\//g, '\\\\');
                 const assetName = document.createElement('p');
-                assetName.innerHTML = `${asset.namespace}\\${asset.asset}`.replace(/\\/g, '\\\\');
+                assetName.innerHTML = assetProperName;
                 assetElement.appendChild(assetName);
 
                 assetList.appendChild(assetElement);
