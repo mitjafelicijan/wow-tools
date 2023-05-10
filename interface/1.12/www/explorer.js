@@ -50,12 +50,13 @@ function generateNamespaceFrindlyName(assetName) {
                 // Adds image
                 const image = document.createElement('img');
                 image.src = `${assetUrl}/${asset.namespace}/${asset.asset}.png`;
+                image.addEventListener('click', () => {
+                    window.open(`${assetUrl}/${asset.namespace}/${asset.asset}.png`);
+                });
                 assetElement.appendChild(image);
 
                 // Asset name
                 const assetProperName = `${namespaceName}\\${asset.asset}`.replace(/\\/g, '\\\\');
-                console.log(assetProperName);
-
                 const assetName = document.createElement('p');
                 assetName.innerHTML = `${namespaceName}\\${asset.asset}`.replace(/\\/g, '\\\\');
                 assetElement.appendChild(assetName);
@@ -86,6 +87,9 @@ function generateNamespaceFrindlyName(assetName) {
                 // Adds image
                 const image = document.createElement('img');
                 image.src = `${assetUrl}/${asset.namespace}/${asset.asset}.png`;
+                image.addEventListener('click', () => {
+                    window.open(`${assetUrl}/${asset.namespace}/${asset.asset}.png`);
+                });
                 assetElement.appendChild(image);
 
                 // Asset name

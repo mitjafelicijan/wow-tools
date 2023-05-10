@@ -90,6 +90,10 @@ main div p {
     font-weight: 600;
 }
 
+main div img {
+    cursor: pointer;
+}
+
 form {
     position: fixed;
     right: 12px;
