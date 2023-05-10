@@ -101,9 +101,9 @@ function renderListView(listItems) {
             assetElement.appendChild(image);
 
             // Asset name
-            const assetProperName = `${asset.namespace}\\${asset.asset}`.replace(/\\/g, '\\\\');
+            const assetProperName = `${asset.namespace}\\${asset.asset}`.replace(/\\/g, '\\\\').replace(/\//g, '\\\\\;').replace(/;/g, '');
             const assetName = document.createElement('p');
-            assetName.innerHTML = `${asset.namespace}\\${asset.asset}`.replace(/\\/g, '\\\\');
+            assetName.innerHTML = assetProperName;
             assetName.addEventListener('click', () => {
                 navigator.clipboard.writeText(assetProperName);
             });
