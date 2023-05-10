@@ -17,6 +17,7 @@ body {
     overflow: hidden;
 }
 
+/* Header bar on the top containing logo. */
 header {
     position: fixed;
     top: 0;
@@ -29,11 +30,24 @@ header {
     padding-left: 20px;
     align-items: center;
     gap: 7px;
-    background-color: burlywood;
+    background-color: darkgoldenrod;
 }
 
 header img {
     height: 28px;
+}
+
+/* Search form right top. */
+form {
+    position: fixed;
+    right: 12px;
+    top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+form input {
+    font-size: medium;
 }
 
 aside {
@@ -44,12 +58,23 @@ aside {
     width: var(--aside-width);
     padding: 20px;
     overflow: auto;
-    background-color: aqua;
+    background-color: burlywood;
 }
 
-aside div:hover {
-    text-decoration: underline;
+/* Left sidebar containing navigation tree. */
+aside ul {
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    margin-left: 15px;
+    list-style: square;
     cursor: pointer;
+}
+
+aside ul li span:hover {
+    text-decoration: underline;
 }
 
 main {
@@ -62,46 +87,41 @@ main {
     padding: 20px;
     overflow: auto;
 
+    /* display: grid;
+    align-items: start;
+    grid-template-columns: repeat(auto-fill, minmax(0, 512px));
+    gap: 30px; */
+
+
+}
+
+main div.asset-list {
     display: grid;
     align-items: start;
     grid-template-columns: repeat(auto-fill, minmax(0, 512px));
     gap: 30px;
-
 }
 
-main>div {
+main div.asset {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    height: 100%;
 }
 
-main div img {
+main div.asset img {
     max-width: 256px;
     max-height: 256px;
     object-fit: contain;
     background: violet;
+    cursor: pointer;
+    margin: 20px;
 }
 
-main div p {
+main div.asset p {
     background-color: antiquewhite;
     padding: 5px 10px;
     font-weight: 600;
-}
-
-main div img {
     cursor: pointer;
-}
-
-form {
-    position: fixed;
-    right: 12px;
-    top: 12px;
-    display: flex;
-    gap: 10px;
-}
-
-form input {
-    font-size: medium;
 }
