@@ -1,5 +1,4 @@
 const assetUrl = 'https://raw.githubusercontent.com/mitjafelicijan/wow-tools/master/interface/1.12/assets';
-// const indexFile = 'https://raw.githubusercontent.com/mitjafelicijan/wow-tools/master/interface/1.12/assets/';
 const assetDirectory = [];
 
 // async self executing function
@@ -58,4 +57,37 @@ const assetDirectory = [];
             }
         });
     }
+
+    // Search functionality
+    const searchForm = document.querySelector('form');
+    searchForm.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const searchInput = document.querySelector('input');
+        const searchTerm = searchInput.value;
+
+        if (!searchTerm) {
+            alert('Please enter a search term.');
+            return
+        };
+
+        assetList.innerHTML = '';
+        assetDirectory.forEach(asset => {
+            if (asset.asset.toLowerCase().includes(searchTerm.toLowerCase())) {
+                const assetElement = document.createElement('div');
+
+                // Adds image
+                const image = document.createElement('img');
+                image.src = `${assetUrl}/${asset.namespace}/${asset.asset}.png`;
+                assetElement.appendChild(image);
+
+                // Asset name
+                const assetName = document.createElement('p');
+                assetName.innerHTML = `${asset.namespace}\\${asset.asset}`.replace(/\\/g, '\\\\');
+                assetElement.appendChild(assetName);
+
+                assetList.appendChild(assetElement);
+            }
+        });
+    });
 })();

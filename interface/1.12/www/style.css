@@ -89,3 +89,15 @@ main div p {
     padding: 5px 10px;
     font-weight: 600;
 }
+
+form {
+    position: fixed;
+    right: 12px;
+    top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+form input {
+    font-size: medium;
+}
