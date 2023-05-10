@@ -51,7 +51,7 @@ const assetDirectory = [];
 
                 // Asset name
                 const assetName = document.createElement('p');
-                assetName.innerHTML = `${namespaceName}\\${asset.asset}`;
+                assetName.innerHTML = `${namespaceName}\\${asset.asset}`.replace(/\\/g, '\\\\');
                 assetElement.appendChild(assetName);
 
                 assetList.appendChild(assetElement);
