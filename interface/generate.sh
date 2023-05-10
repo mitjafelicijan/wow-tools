@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Usage: bash blp2png.sh ~/Junk/Work/ 1.12/ ../external/
+
 if [ "$#" -lt 3 ]; then
     echo "Usage: $0 workdir outputdir toolsdir"
     exit 1
@@ -36,7 +38,7 @@ while read -r line; do
         wine "$TOOLS_DIR/BLP2PNG.exe" "$WORK_DIR/$line"
         mv "$WORK_DIR/$pngfile" "$OUTPUT_DIR/assets/$namespace"
 
-        echo $line >> "$OUTPUT_DIR/assets/listfile.txt"
+        echo "$namespace;$filename" >> "$OUTPUT_DIR/assets/listfile.txt"
         
         echo "[$counter/$numassets]" $line
         ((counter++))
