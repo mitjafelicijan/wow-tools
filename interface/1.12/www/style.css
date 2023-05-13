@@ -98,7 +98,7 @@ main {
 main div.asset-list {
     display: grid;
     align-items: start;
-    grid-template-columns: repeat(auto-fill, minmax(0, 512px));
+    grid-template-columns: repeat(auto-fill, minmax(0, 500px));
     gap: 30px;
 }
 
