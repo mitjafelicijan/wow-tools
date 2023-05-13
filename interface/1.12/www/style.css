@@ -1,5 +1,5 @@
 :root {
-    --aside-width: 350px;
+    --aside-width: 320px;
     --header-height: 50px;
 }
 
@@ -86,19 +86,12 @@ main {
     background-color: white;
     padding: 20px;
     overflow: auto;
-
-    /* display: grid;
-    align-items: start;
-    grid-template-columns: repeat(auto-fill, minmax(0, 512px));
-    gap: 30px; */
-
-
 }
 
 main div.asset-list {
     display: grid;
     align-items: start;
-    grid-template-columns: repeat(auto-fill, minmax(0, 500px));
+    grid-template-columns: repeat(auto-fill, minmax(0, 512px));
     gap: 30px;
 }
 
